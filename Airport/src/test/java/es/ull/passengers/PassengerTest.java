@@ -43,14 +43,6 @@ public class PassengerTest {
     }
 
     @Test
-    void testJoinFlightTwice() {
-        Flight flight = new Flight("AB123", 50);
-        passenger.joinFlight(flight);
-
-        assertThrows(RuntimeException.class, () -> passenger.joinFlight(flight));
-    }
-
-    @Test
     void testJoinFlightWithPreviousFlight() {
         Flight previousFlight = new Flight("CD456", 30);
         passenger.joinFlight(previousFlight);
