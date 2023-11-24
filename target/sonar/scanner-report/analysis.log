@@ -1,0 +1,77 @@
+SonarCloud plugins:
+  - Python Code Quality and Security 4.12.0.13917 (python)
+  - Dataflow Bug Detection Rules for Python 1.19.0.6564 (dbdpythonfrontend)
+  - Dataflow Bug Detection 1.19.0.6564 (dbd)
+  - JaCoCo 1.3.0.1538 (jacoco)
+  - IaC Code Quality and Security 1.22.0.7057 (iac)
+  - Dataflow Bug Detection Rules for Java 1.19.0.6564 (dbdjavafrontend)
+  - JavaScript/TypeScript/CSS Code Quality and Security 10.9.0.24449 (javascript)
+  - License for SonarLint 8.0.0.50887 (license)
+  - C# Code Quality and Security 9.13.0.79967 (csharp)
+  - Java Code Quality and Security 7.28.0.33738 (java)
+  - XML Code Quality and Security 2.10.0.4108 (xml)
+  - Text Code Quality and Security 2.7.1.1388 (text)
+  - VB.NET Code Quality and Security 9.13.0.79967 (vbnet)
+  - Configuration detection for Code Quality and Security 1.3.0.654 (config)
+Project server settings:
+  - sonar.abap.file.suffixes=.abap,.ab4,.flow,.asprog
+  - sonar.apex.file.suffixes=.cls,.trigger
+  - sonar.autoscan.enabled=false
+  - sonar.c.file.suffixes=.c,.h
+  - sonar.cpp.file.suffixes=.cc,.cpp,.cxx,.c++,.hh,.hpp,.hxx,.h++,.ipp
+  - sonar.cs.file.suffixes=.cs,.razor
+  - sonar.css.file.suffixes=.css,.less,.scss,.sass
+  - sonar.docker.file.patterns=Dockerfile,*.dockerfile
+  - sonar.flex.file.suffixes=as
+  - sonar.go.file.suffixes=.go
+  - sonar.html.file.suffixes=.html,.xhtml,.cshtml,.vbhtml,.aspx,.ascx,.rhtml,.erb,.shtm,.shtml,.cmp,.twig
+  - sonar.java.file.suffixes=.java,.jav
+  - sonar.javascript.file.suffixes=.js,.jsx,.cjs,.mjs,.vue
+  - sonar.json.file.suffixes=.json
+  - sonar.jsp.file.suffixes=.jsp,.jspf,.jspx
+  - sonar.kotlin.file.suffixes=.kt,.kts
+  - sonar.objc.file.suffixes=.m
+  - sonar.php.file.suffixes=php,php3,php4,php5,phtml,inc
+  - sonar.pli.file.suffixes=.pli
+  - sonar.plsql.file.suffixes=sql,tab,pkb
+  - sonar.python.file.suffixes=py
+  - sonar.ruby.file.suffixes=.rb
+  - sonar.scala.file.suffixes=.scala
+  - sonar.swift.file.suffixes=.swift
+  - sonar.terraform.file.suffixes=.tf
+  - sonar.tsql.file.suffixes=.tsql
+  - sonar.typescript.file.suffixes=.ts,.tsx,.cts,.mts
+  - sonar.vbnet.file.suffixes=.vb
+  - sonar.xml.file.suffixes=.xml,.xsd,.xsl,.config
+  - sonar.yaml.file.suffixes=.yaml,.yml
+Project scanner properties:
+  - sonar.binaries=C:\Users\crerr\OneDrive\Desktop\CUARTO\LyH\Airport\target\classes
+  - sonar.coverage.jacoco.xmlReportPaths=C:\Users\crerr\OneDrive\Desktop\CUARTO\LyH\Airport/../app-it/target/site/jacoco-aggregate/jacoco.xml
+  - sonar.groovy.binaries=C:\Users\crerr\OneDrive\Desktop\CUARTO\LyH\Airport\target\classes
+  - sonar.host.url=https://sonarcloud.io
+  - sonar.java.binaries=C:\Users\crerr\OneDrive\Desktop\CUARTO\LyH\Airport\target\classes
+  - sonar.java.source=1.8
+  - sonar.java.target=1.8
+  - sonar.java.test.binaries=C:\Users\crerr\OneDrive\Desktop\CUARTO\LyH\Airport\target\test-classes
+  - sonar.java.test.libraries=C:\Users\crerr\OneDrive\Desktop\CUARTO\LyH\Airport\target\classes,C:\Users\crerr\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar,C:\Users\crerr\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar,C:\Users\crerr\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar,C:\Users\crerr\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar,C:\Users\crerr\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar,C:\Users\crerr\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar
+  - sonar.junit.reportPaths=C:\Users\crerr\OneDrive\Desktop\CUARTO\LyH\Airport\target\surefire-reports
+  - sonar.junit.reportsPath=C:\Users\crerr\OneDrive\Desktop\CUARTO\LyH\Airport\target\surefire-reports
+  - sonar.links.ci=
+  - sonar.links.homepage=
+  - sonar.links.issue=
+  - sonar.links.scm=
+  - sonar.links.scm_dev=
+  - sonar.moduleKey=FrancescoMarelli_Airport
+  - sonar.organization=francescomarelli
+  - sonar.projectBaseDir=C:\Users\crerr\OneDrive\Desktop\CUARTO\LyH\Airport
+  - sonar.projectBuildDir=C:\Users\crerr\OneDrive\Desktop\CUARTO\LyH\Airport\target
+  - sonar.projectKey=FrancescoMarelli_Airport
+  - sonar.projectName=ch13-continuous
+  - sonar.projectVersion=1.0-SNAPSHOT
+  - sonar.scanner.app=ScannerMaven
+  - sonar.scanner.appVersion=3.9.0.2155/3.9.5
+  - sonar.sourceEncoding=UTF-8
+  - sonar.sources=C:\Users\crerr\OneDrive\Desktop\CUARTO\LyH\Airport\pom.xml,C:\Users\crerr\OneDrive\Desktop\CUARTO\LyH\Airport\src\main\java
+  - sonar.tests=C:\Users\crerr\OneDrive\Desktop\CUARTO\LyH\Airport\src\test\java
+  - sonar.verbose=true
+  - sonar.working.directory=C:\Users\crerr\OneDrive\Desktop\CUARTO\LyH\Airport\target\sonar
