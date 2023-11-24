@@ -1,0 +1,4 @@
+es.ull.flights.Flight#removePassenger(Les/ull/passengers/Passenger;)Z
+==
+setFlight es.ull.passengers.Passenger#setFlight(Les/ull/flights/Flight;)V
+remove java.util.Set#remove(Ljava/lang/Object;)Z
