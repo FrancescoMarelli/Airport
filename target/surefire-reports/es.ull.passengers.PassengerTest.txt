@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: es.ull.passengers.PassengerTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.027 s <<< FAILURE! - in es.ull.passengers.PassengerTest
-testPassengerConstructorValidCountryCode  Time elapsed: 0.022 s  <<< ERROR!
-java.lang.RuntimeException: Invalid country code
-	at es.ull.passengers.PassengerTest.setUp(PassengerTest.java:14)
-
