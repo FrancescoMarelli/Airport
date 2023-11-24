@@ -14,7 +14,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
             <sonar.organization>francescomarelli</sonar.organization>
-            <sonar.login>SONAR_TOKEN</sonar.login>
+            <sonar.login>66a8ddb61625f9dc8e3af84ea6366da1b6dce18f</sonar.login>
             <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
 
