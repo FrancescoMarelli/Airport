@@ -16,6 +16,7 @@
 
         <sonar.projectKey>FrancescoMarelli_Airport</sonar.projectKey>
         <sonar.organization>francescomarelli</sonar.organization>
+        <sonar.login>fb375667e6dfe96149f37ecde2eae0e565a1824b</sonar.login>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
 
