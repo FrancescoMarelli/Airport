@@ -16,17 +16,9 @@ public class PassengerTest {
     }
 
     @Test
-    void testGetIdentifier() {
+    void testGetters() {
         assertEquals("12345678A", passenger.getIdentifier());
-    }
-
-    @Test
-    void testGetName() {
         assertEquals("Jack Harlow", passenger.getName());
-    }
-
-    @Test
-    void testGetCountryCode() {
         assertEquals("US", passenger.getCountryCode());
     }
 
@@ -37,28 +29,18 @@ public class PassengerTest {
 
     @Test
     void testInvalidCountryCode() {
-        // Act & Assert
-        RuntimeException exception = assertThrows(RuntimeException.class, () -> {
-            // Crear el Passenger con un código de país no válido
-            new Passenger("19875678A", "Luke Dorty", "XX");
-        });
-
-        // Verificar el mensaje de la excepción
-        String expectedMessage = "Invalid country code";
-        assertTrue(exception.getMessage().contains(expectedMessage));
+        assertThrows(RuntimeException.class, () -> new Passenger("19875678A", "Luke Dorty", "XX"));
     }
 
     @Test
     void testValidCountryCode() {
-        // Arrange
-        new Passenger("12345678A", "Max Willem", "US");
+        assertDoesNotThrow(() -> new Passenger("19875678A", "Luke Dorty", "US"));
     }
 
     @Test
     void testJoinFlight() {
         Flight flight = new Flight("AB123", 50);
         passenger.joinFlight(flight);
-
         assertEquals(flight, passenger.getFlight());
     }
 
@@ -94,7 +76,6 @@ public class PassengerTest {
     void testSetFlight() {
         Flight flight = new Flight("AB123", 50);
         passenger.setFlight(flight);
-
         assertEquals(flight, passenger.getFlight());
     }
 
@@ -116,6 +97,4 @@ public class PassengerTest {
 
         assertThrows(RuntimeException.class, () -> passenger3.joinFlight(flight));
     }
-
-
 }

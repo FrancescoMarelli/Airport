@@ -1,4 +1,5 @@
-import es.ull.flights.Flight;
+package es.ull.flights;
+
 import es.ull.passengers.Passenger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
