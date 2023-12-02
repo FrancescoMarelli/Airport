@@ -28,8 +28,16 @@ public class PassengerTest {
     }
 
     @Test
-    void testInvalidCountryCode() {
-        assertThrows(RuntimeException.class, () -> new Passenger("19875678A", "Luke Dorty", "XX"));
+    public void testConstructorWithInvalidCountryCode() {
+        // Arrange
+        String identifier = "XXX999";
+        String name = "Luke Dorty";
+        String invalidCountryCode = "INVALID";
+
+        // Act & Assert
+        assertThrows(RuntimeException.class, () -> {
+            new Passenger(identifier, name, invalidCountryCode);
+        });
     }
 
     @Test
@@ -97,4 +105,6 @@ public class PassengerTest {
 
         assertThrows(RuntimeException.class, () -> passenger3.joinFlight(flight));
     }
+
+
 }
