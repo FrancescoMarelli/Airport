@@ -36,6 +36,25 @@ public class PassengerTest {
     }
 
     @Test
+    void testInvalidCountryCode() {
+        // Act & Assert
+        RuntimeException exception = assertThrows(RuntimeException.class, () -> {
+            // Crear el Passenger con un código de país no válido
+            new Passenger("19875678A", "Luke Dorty", "XX");
+        });
+
+        // Verificar el mensaje de la excepción
+        String expectedMessage = "Invalid country code";
+        assertTrue(exception.getMessage().contains(expectedMessage));
+    }
+
+    @Test
+    void testValidCountryCode() {
+        // Arrange
+        new Passenger("12345678A", "Max Willem", "US");
+    }
+
+    @Test
     void testJoinFlight() {
         Flight flight = new Flight("AB123", 50);
         passenger.joinFlight(flight);
@@ -57,16 +76,18 @@ public class PassengerTest {
 
     @Test
     void testJoinFlightExceedingSeats() {
-        Flight flight = new Flight("AB123", 2);
+        Flight flight = new Flight("AB123",3 );
         passenger.joinFlight(flight);
 
-        Passenger passenger2 = new Passenger("87654321B", "Jane Doe", "US");
+        Passenger passenger2 = new Passenger("87654321B", "Francesco Virgolini", "IT");
+        Passenger passenger3 = new Passenger("09876543T", "Miguel Torres", "PR");
+        passenger3.joinFlight(flight);
         passenger2.joinFlight(flight);
         RuntimeException exception = assertThrows(RuntimeException.class, () -> new Passenger("99999999C", "Bob Smith", "US").joinFlight(flight));
 
         assertEquals("Not enough seats for flight AB123", exception.getMessage());
-        assertEquals(2, flight.getNumberOfPassengers()); // Verificar que el número de pasajeros no cambió
-        assertThrows(RuntimeException.class, () -> new Passenger("99999999C", "Bob Smith", "US").joinFlight(flight));
+        assertEquals(3, flight.getNumberOfPassengers()); // Verificar que el número de pasajeros no cambió
+        assertThrows(RuntimeException.class, () -> new Passenger("87654321I", "Dimitri Vegas Smith", "RO").joinFlight(flight));
     }
 
     @Test
@@ -83,17 +104,12 @@ public class PassengerTest {
     }
 
     @Test
-    void testInvalidCountryCode() {
-        assertThrows(RuntimeException.class, () -> new Passenger("12345678A", "Invalid Name", "XX"));
-    }
-
-    @Test
     void testJoinFlightFailedAddPassenger() {
         Flight flight = new Flight("AB123", 2);
 
-        Passenger passenger1 = new Passenger("12345678A", "John Doe", "US");
-        Passenger passenger2 = new Passenger("87654321B", "Jane Doe", "US");
-        Passenger passenger3 = new Passenger("99999999C", "Bob Smith", "US");
+        Passenger passenger1 = new Passenger("12345678A", "Miguel Sanders", "BR");
+        Passenger passenger2 = new Passenger("87654321B", "Jose Dorta", "VE");
+        Passenger passenger3 = new Passenger("82736272X", "Jack Smith", "US");
 
         passenger1.joinFlight(flight);
         passenger2.joinFlight(flight);
