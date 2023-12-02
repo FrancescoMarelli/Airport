@@ -1,17 +1,0 @@
-­
-es.ull.passengers.Passengere
-<init>[es.ull.passengers.Passenger#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)VP
-getCountryCode>es.ull.passengers.Passenger#getCountryCode()Ljava/lang/String;K
-	getFlight>es.ull.passengers.Passenger#getFlight()Les/ull/flights/Flight;N
-getIdentifier=es.ull.passengers.Passenger#getIdentifier()Ljava/lang/String;B
-getName7es.ull.passengers.Passenger#getName()Ljava/lang/String;N
-
-joinFlight@es.ull.passengers.Passenger#joinFlight(Les/ull/flights/Flight;)VL
-	setFlight?es.ull.passengers.Passenger#setFlight(Les/ull/flights/Flight;)VD
-toString8es.ull.passengers.Passenger#toString()Ljava/lang/String;java.lang.Object¬
-es.ull.flights.Flight<
-<init>2es.ull.flights.Flight#<init>(Ljava/lang/String;I)VR
-addPassengerBes.ull.flights.Flight#addPassenger(Les/ull/passengers/Passenger;)ZL
-getFlightNumber9es.ull.flights.Flight#getFlightNumber()Ljava/lang/String;G
-getNumberOfPassengers.es.ull.flights.Flight#getNumberOfPassengers()IX
-removePassengerEes.ull.flights.Flight#removePassenger(Les/ull/passengers/Passenger;)Zjava.lang.Object

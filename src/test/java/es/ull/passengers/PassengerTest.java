@@ -1,5 +1,6 @@
+package es.ull.passengers;
+
 import es.ull.flights.Flight;
-import es.ull.passengers.Passenger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +12,7 @@ public class PassengerTest {
 
     @BeforeEach
     void setUp() {
-        passenger = new Passenger("12345678A", "John Doe", "US");
+        passenger = new Passenger("12345678A", "Jack Harlow", "US");
     }
 
     @Test
@@ -21,7 +22,7 @@ public class PassengerTest {
 
     @Test
     void testGetName() {
-        assertEquals("John Doe", passenger.getName());
+        assertEquals("Jack Harlow", passenger.getName());
     }
 
     @Test
@@ -61,7 +62,10 @@ public class PassengerTest {
 
         Passenger passenger2 = new Passenger("87654321B", "Jane Doe", "US");
         passenger2.joinFlight(flight);
+        RuntimeException exception = assertThrows(RuntimeException.class, () -> new Passenger("99999999C", "Bob Smith", "US").joinFlight(flight));
 
+        assertEquals("Not enough seats for flight AB123", exception.getMessage());
+        assertEquals(2, flight.getNumberOfPassengers()); // Verificar que el número de pasajeros no cambió
         assertThrows(RuntimeException.class, () -> new Passenger("99999999C", "Bob Smith", "US").joinFlight(flight));
     }
 
@@ -75,6 +79,27 @@ public class PassengerTest {
 
     @Test
     void testToString() {
-        assertEquals("Passenger John Doe with identifier: 12345678A from US", passenger.toString());
+        assertEquals("Passenger Jack Harlow with identifier: 12345678A from US", passenger.toString());
     }
+
+    @Test
+    void testInvalidCountryCode() {
+        assertThrows(RuntimeException.class, () -> new Passenger("12345678A", "Invalid Name", "XX"));
+    }
+
+    @Test
+    void testJoinFlightFailedAddPassenger() {
+        Flight flight = new Flight("AB123", 2);
+
+        Passenger passenger1 = new Passenger("12345678A", "John Doe", "US");
+        Passenger passenger2 = new Passenger("87654321B", "Jane Doe", "US");
+        Passenger passenger3 = new Passenger("99999999C", "Bob Smith", "US");
+
+        passenger1.joinFlight(flight);
+        passenger2.joinFlight(flight);
+
+        assertThrows(RuntimeException.class, () -> passenger3.joinFlight(flight));
+    }
+
+
 }
