@@ -28,7 +28,7 @@ public class FlightTest {
 
     @Test
     void testAddPassenger() {
-        Passenger passenger = new Passenger("12345678A", "John Doe", "US");
+        Passenger passenger = new Passenger("12345678A", "Mike Towers", "PR");
         assertTrue(flight.addPassenger(passenger));
         assertEquals(1, flight.getNumberOfPassengers());
     }
@@ -37,18 +37,17 @@ public class FlightTest {
     void testAddPassengerExceedingSeats() {
         // Llenar todos los asientos
         for (int i = 0; i < 50; i++) {
-            flight.addPassenger(new Passenger("Passenger " + i, "John Doe", "US"));
+            flight.addPassenger(new Passenger("Passenger " + i, "Luke Skywalker", "IT"));
         }
 
         // Intentar agregar un pasajero adicional debería lanzar una excepción
-        assertThrows(RuntimeException.class, () -> flight.addPassenger(new Passenger("Extra Passenger", "Jane Doe", "US")));
+        assertThrows(RuntimeException.class, () -> flight.addPassenger(new Passenger("Extra Passenger", "Luke Skywalker", "IT")));
     }
 
     @Test
     void testRemovePassenger() {
         Passenger passenger = new Passenger("12345678A", "John Doe", "US");
         flight.addPassenger(passenger);
-
         assertTrue(flight.removePassenger(passenger));
         assertEquals(0, flight.getNumberOfPassengers());
     }
@@ -60,5 +59,11 @@ public class FlightTest {
         // Intentar eliminar un pasajero que no está en el vuelo no debería lanzar excepción
         assertFalse(flight.removePassenger(passenger));
         assertEquals(0, flight.getNumberOfPassengers());
+    }
+    @Test
+    void testInvalidFlightNumber() {
+        // Act & Assert
+        RuntimeException exception = assertThrows(RuntimeException.class, () -> new Flight("InvalidFlightNumber", 50));
+        assertEquals("Invalid flight number", exception.getMessage());
     }
 }
