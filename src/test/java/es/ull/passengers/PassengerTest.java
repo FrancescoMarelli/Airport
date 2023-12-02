@@ -54,14 +54,24 @@ public class PassengerTest {
 
     @Test
     void testJoinFlightWithPreviousFlight() {
+        // Arrange
         Flight previousFlight = new Flight("CD456", 30);
-        passenger.joinFlight(previousFlight);
-
         Flight newFlight = new Flight("EF789", 40);
+        Passenger passenger = new Passenger("ABC123", "John Doe", "US");
+
+        // Act
+        passenger.joinFlight(previousFlight);
         passenger.joinFlight(newFlight);
 
+        // Assert
         assertEquals(newFlight, passenger.getFlight());
         assertEquals(0, previousFlight.getNumberOfPassengers());
+
+        // añado pasajero duplicado
+        passenger.joinFlight(newFlight);
+        assertEquals(newFlight, passenger.getFlight()); // pasajero se queda
+        assertEquals(0, previousFlight.getNumberOfPassengers()); // Vuelvo anterior vacío
+        assertEquals(1, newFlight.getNumberOfPassengers()); // 1 pasajero, el mismo
     }
 
     @Test
