@@ -104,17 +104,25 @@ public class PassengerTest {
 
     @Test
     void testJoinFlightFailedAddPassenger() {
+        // Arrange
         Flight flight = new Flight("AB123", 2);
 
         Passenger passenger1 = new Passenger("12345678A", "Miguel Sanders", "BR");
         Passenger passenger2 = new Passenger("87654321B", "Jose Dorta", "VE");
         Passenger passenger3 = new Passenger("82736272X", "Jack Smith", "US");
 
+        // Act
         passenger1.joinFlight(flight);
         passenger2.joinFlight(flight);
 
-        assertThrows(RuntimeException.class, () -> passenger3.joinFlight(flight));
+        // Intentar agregar el mismo pasajero nuevamente
+        RuntimeException exception = assertThrows(RuntimeException.class, () -> passenger3.joinFlight(flight));
+
+        // Verificar el mensaje de la excepción
+        assertEquals("Not enough seats for flight AB123", exception.getMessage());
     }
+
+
 
 
 }
