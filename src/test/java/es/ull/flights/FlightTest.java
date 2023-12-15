@@ -66,4 +66,5 @@ public class FlightTest {
         RuntimeException exception = assertThrows(RuntimeException.class, () -> new Flight("InvalidFlightNumber", 50));
         assertEquals("Invalid flight number", exception.getMessage());
     }
+
 }
