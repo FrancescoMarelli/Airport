@@ -111,8 +111,10 @@ public class PassengerTest {
         assertDoesNotThrow(() -> passenger2.joinFlight(flight));
         Passenger passenger3 = new Passenger("12345678A", "Jack Harlow", "US");
         assertThrows(RuntimeException.class, () -> passenger3.joinFlight(flight));
-        Flight flight2 = new Flight("AB124", 2);
+        Flight flight2 = new Flight("AB124", 1);
         assertThrows(RuntimeException.class, () -> passenger3.joinFlight(flight2));
+        assertDoesNotThrow(() -> passenger2.joinFlight(flight2));
+        assertThrows(RuntimeException.class, () -> passenger.joinFlight(flight2));
 
     }
 
